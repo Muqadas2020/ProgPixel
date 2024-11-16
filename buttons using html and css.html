@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Button Designs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Base button styles */
+    .btn {
+      width: 200px; /* Ensure consistent button width */
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* Button 1: Grow */
+    .btn-grow {
+      background-color: #6200ea;
+    }
+    .btn-grow:hover {
+      transform: scale(1.1);
+      background-color: #3700b3;
+    }
+
+    /* Button 2: Border grow */
+    .btn-border-grow {
+      color: #6200ea;
+      background: transparent;
+      border: 2px solid #6200ea;
+    }
+    .btn-border-grow:hover {
+      color: #fff;
+      background-color: #6200ea;
+      border-color: transparent;
+    }
+
+    /* Button 3: Outline slide */
+    .btn-outline-slide {
+      color: #03a9f4;
+      background: transparent;
+      border: 2px solid #03a9f4;
+      position: relative;
+    }
+    .btn-outline-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #03a9f4;
+      transition: all 0.4s;
+      z-index: -1;
+    }
+    .btn-outline-slide:hover::before {
+      left: 0;
+    }
+    .btn-outline-slide:hover {
+      color: #fff;
+    }
+
+    /* Button 4: Shadow Lift */
+    .btn-shadow {
+      background-color: #ff9800;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .btn-shadow:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Button 5: Gradient Glow */
+    .btn-gradient {
+      background: linear-gradient(45deg, #ff6b6b, #fddb92);
+    }
+    .btn-gradient:hover {
+      background: linear-gradient(45deg, #fddb92, #ff6b6b);
+      filter: brightness(1.1);
+    }
+
+    /* Button 6: Fill slide from bottom */
+    .btn-fill-slide {
+      color: #6200ea;
+      background: transparent;
+      border: 2px solid #6200ea;
+      overflow: hidden;
+    }
+    .btn-fill-slide::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #6200ea;
+      transition: all 0.4s;
+      z-index: -1;
+    }
+    .btn-fill-slide:hover::before {
+      bottom: 0;
+    }
+    .btn-fill-slide:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <button class="btn btn-grow">Grow</button>
+    <button class="btn btn-border-grow">Border Grow</button>
+    <button class="btn btn-outline-slide">Outline Slide</button>
+    <button class="btn btn-shadow">Shadow Lift</button>
+    <button class="btn btn-gradient">Gradient Glow</button>
+    <button class="btn btn-fill-slide">Fill Slide</button>
+  </div>
+
+</body>
+</html>
